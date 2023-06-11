@@ -1,6 +1,6 @@
 Feature: Login page
 
-    Feature Login page will work depending on the user credentials.
+    Feature Login Page work flow works appropriately.
 
     Background:
         Given A user is at the quales edu library login page
@@ -9,12 +9,12 @@ Feature: Login page
         Then The url will contains the quales library
     Scenario: Incorrect Username Login
         When A user provides incorrect credentials, and clicks on the login button
-            | username | password     |
+            | username     | password  |
             | ay2@mail.com | pass1234! |
         Then The error message "Password must be 8 characters with at least one letter and one digit" is displayed
 
     Scenario: Incorrect Password Login
         When A user provides incorrect credentials, and clicks on the login button
-            | username      | password     |
+            | username     | password     |
             | ayp@mail.com | testPassword |
-       Then The password error message "Invalid Login Credential" is displayed
+        Then The password error message "Invalid Login Credential" is displayed

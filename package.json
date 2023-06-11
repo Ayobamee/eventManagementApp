@@ -4,6 +4,8 @@
   "description": "This project is meant to be a kind of template to start working with Cucumber and Cypress just cloning the project.",
   "main": "index.js",
   "scripts": {
+    "openTestRunner": "npx cypress open",
+    "runTestsLocally": "npx cypress run",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
     "cypress:execution-tags": "cypress run --env tags=@mobile",

@@ -1,0 +1,11 @@
+{
+  "userDetails": {
+    "username": "ayp@mail.com",
+    "password": "pass1234"
+  },
+  "CourseInformation": {
+    "courseTitle": "Cypress BDD Test",
+    "courseDescription": "This is a Cypress Test",
+    "address": "Magodo Phase II"
+  }
+}

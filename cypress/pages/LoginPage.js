@@ -3,10 +3,12 @@ class LoginPage {
     signInBtn: () => cy.contains("Sign In"),
     usernameInput: () => cy.get('[data-testid="EmailAddress"]'),
     passwordInput: () => cy.get('[data-testid="Password"]'),
-    loginBtn: () => cy.get('.MuiButton-contained'),
-    errorMessage: () => cy.contains('Password must be 8 characters with at least one letter and one digit'),
-    errorMessagePassword: () => cy.contains('Invalid Login Credential'),
-
+    loginBtn: () => cy.get(".MuiButton-contained"),
+    errorMessage: () =>
+      cy.contains(
+        "Password must be 8 characters with at least one letter and one digit"
+      ),
+    errorMessagePassword: () => cy.contains("Invalid Login Credential"),
   };
 
   typeUsername(username) {
