@@ -8,6 +8,7 @@ import { loginPage } from "@pages/LoginPage";
 import { landingPage } from "@pages/LandingPage";
 import { coursePage } from "@pages/CoursePage";
 
+
 Given("A user is logged into the Quales App", () => {
   cy.fixture("testData").then((users) => {
     const testUser = users.userDetails;

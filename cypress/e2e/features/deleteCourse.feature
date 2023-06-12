@@ -7,5 +7,4 @@ Feature: Delete course page
     Scenario:  Delete Course
         When I view my courses
         Then I can delete a course successfully
-# When I click the Add Course button
-# Then I can create a course successfully
+
