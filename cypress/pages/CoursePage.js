@@ -15,6 +15,9 @@ class CoursePage {
       cy.get(
         ".MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-wvpqgg"
       ),
+    secondDeleteBtn: () => cy.get(".MuiBox-root > .MuiButton-contained"),
+    onscreenMessageForCourseDeletion: () =>
+      cy.contains("Course deleted successfully"),
   };
 
   fillCourseForm(courseTitle, courseDescription, address) {
@@ -32,6 +35,8 @@ class CoursePage {
   deleteCourse() {
     this.elements.selectCourse().click();
     this.elements.deleteCourseBtn().click({ force: true });
+    this.elements.secondDeleteBtn().click();
+    this.elements.onscreenMessageForCourseDeletion().should("be.visible");
   }
 }
 
