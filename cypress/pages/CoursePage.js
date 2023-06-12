@@ -10,6 +10,11 @@ class CoursePage {
     secondAddCourseBtn: () => cy.get(".css-tzsjye > .MuiButton-root"),
     onscreenMessageForCourseCreation: () =>
       cy.contains("Course created successfully"),
+    selectCourse: () => cy.contains("Cypress BDD Test"),
+    deleteCourseBtn: () =>
+      cy.get(
+        ".MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-wvpqgg"
+      ),
   };
 
   fillCourseForm(courseTitle, courseDescription, address) {
@@ -22,6 +27,11 @@ class CoursePage {
     this.elements.addressInputField().type(address);
     this.elements.secondAddCourseBtn().click();
     this.elements.onscreenMessageForCourseCreation().should("be.visible");
+  }
+
+  deleteCourse() {
+    this.elements.selectCourse().click();
+    this.elements.deleteCourseBtn().click({ force: true });
   }
 }
 
