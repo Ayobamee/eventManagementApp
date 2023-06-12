@@ -12,7 +12,7 @@ class CoursePage {
       cy.contains("Course created successfully"),
   };
 
-  performFillCourseActions(courseTitle, courseDescription, address) {
+  fillCourseForm(courseTitle, courseDescription, address) {
     this.elements.macbookviewPort();
     this.elements.courseTitleInputField().type(courseTitle);
     this.elements.courseDescriptionInputField().type(courseDescription);

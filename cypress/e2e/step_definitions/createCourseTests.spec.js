@@ -23,7 +23,7 @@ When("I click the Add Course button", () => {
 Then("I can create a course successfully", () => {
   cy.fixture("testData").then((courseInfo) => {
     const testDataInfo = courseInfo.CourseInformation;
-    coursePage.performFillCourseActions(
+    coursePage.fillCourseForm(
       testDataInfo.courseTitle,
       testDataInfo.courseDescription,
       testDataInfo.address
