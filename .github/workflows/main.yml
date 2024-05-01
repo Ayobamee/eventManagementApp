@@ -18,6 +18,6 @@ jobs:
       - name: Run Cypress Tests
         run: npx cypress run
         env:
-          CYPRESS_USERNAME: ${{ secrets.USERNAME }}
-          CYPRESS_PASSWORD: ${{ secrets.PASSWORD }}
+          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+          CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
           CYPRESS_WRONGUSERNAME: ${{ secrets.WRONGUSERNAME }}
