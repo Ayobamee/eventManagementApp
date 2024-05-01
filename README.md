@@ -40,3 +40,12 @@ Install project dependencies with: npm i
 ##  Sample repo to generate an allure report as an artifact using GH Actions
 
 * https://github.com/SeyiOG/newCyLearn2/blob/main/.github/workflows/cypress-allure-report.yml
+
+
+
+#Issues with first time installation/execution of the cypress on mac using default project from my Github and solution
+1. Ensure you are running node version v18.19.1, to check this go to terminal and run the commnad node -v, if a lower node version is shown run nvm install 18 , if you had an old version eg 15 run nvm uninstall 15 and install 18 and run nvm use 18.
+2. Navigate to project and update the preprocessor by running npm install @badeball/cypress-cucumber-preprocessor@latest --save-dev
+3. Remove the node modules, by navigating to the file directory and deleting the node module folder.
+4. Run npm install, and reinstall the node modules.
+5. Run npx cypress open and run your tests.
