@@ -20,4 +20,4 @@ jobs:
         env:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
-          CYPRESS_WRONGUSERNAME: ${{ secrets.WRONGUSERNAME }}
+          CYPRESS_WRONGUSERNAME: ${{ secrets.CYPRESS_WRONGUSERNAME }}
