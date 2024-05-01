@@ -23,6 +23,7 @@ class LoginPage {
     this.elements.loginBtn().click();
   }
 
+  //added env variables
   submitLogin() {
     this.elements.signInBtn().click();
     this.elements.usernameInput().type(Cypress.env("USERNAME"));
