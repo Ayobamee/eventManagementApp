@@ -1,5 +1,6 @@
 class LandingPage {
   elements = {
+    viewport: () => cy.viewport('macbook-16'),
     registerLoginBtn: () => cy.get('div').contains('Login'),
     countryDropdown: () => cy.get('.iti__selected-flag > .iti__flag'),
     initializeWait: () => cy.wait(1000),
@@ -12,6 +13,7 @@ class LandingPage {
   }
 
   fillInLoginInformation() {
+    this.elements.viewport()
     this.elements.registerLoginBtn().click()
     this.elements.countryDropdown().click()
     this.elements.initializeWait()
@@ -22,6 +24,7 @@ class LandingPage {
   }
 
   fillLoginFormWithIncorrectCredentialsInformation() {
+    this.elements.viewport()
     this.elements.registerLoginBtn().click()
     this.elements.countryDropdown().click()
     this.elements.initializeWait()
