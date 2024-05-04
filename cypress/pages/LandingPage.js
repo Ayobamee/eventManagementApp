@@ -5,7 +5,8 @@ class LandingPage {
     initializeWait: () => cy.wait(1000),
     telephoneNoInputField: () => cy.get('input[type="tel"]'),
     continueBtn: () => cy.get('button').contains('Continue'),
-    passwordInput: () => cy.get('input[placeholder="Password"]'),
+    passwordInput: () =>
+      cy.get('input[placeholder="Password"]', { timeout: 10000 }),
     errorMessage: () =>
       cy.get('div').contains('Password Not Correct. Please Try Again'),
   }
@@ -16,7 +17,6 @@ class LandingPage {
     this.elements.initializeWait()
     this.elements.telephoneNoInputField().click().type(Cypress.env('USERNAME'))
     this.elements.continueBtn().click()
-    cy.wait(3000)
     this.elements.passwordInput().type(Cypress.env('PASSWORD'))
     this.elements.continueBtn().click()
   }
@@ -27,7 +27,6 @@ class LandingPage {
     this.elements.initializeWait()
     this.elements.telephoneNoInputField().click().type(Cypress.env('USERNAME'))
     this.elements.continueBtn().click()
-    cy.wait(3000)
     this.elements.passwordInput().type(Cypress.env('INCORRECTPASSWORD'))
     this.elements.continueBtn().click()
   }
