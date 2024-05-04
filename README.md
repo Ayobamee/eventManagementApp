@@ -50,3 +50,4 @@ Install project dependencies with: npm i
 4. Run npm install, and reinstall the node modules.
 5. Run npx cypress open and run your tests.
 6. Ensure that your variable in your Secrets in Github actions aligns with how you call it in your .yml ie if you use CYPRESS_USERNAME in secrets, in the .yml it should be called using secrets.CYPRESS_USERNAME, if the names do not match, you would have issues running your tests.
+7. Use 'git remote remove origin' to remove origin if you need to

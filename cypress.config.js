@@ -24,7 +24,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://academy.quales.tech/",
+    baseUrl: "https://staging.liveet.co",
     chromeWebSecurity: false,
     env: {
       allureReuseAfterSpec: true,

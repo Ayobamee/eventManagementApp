@@ -1,14 +1,44 @@
 class LandingPage {
   elements = {
-    addCourseBtn: () =>
-      cy.get(
-        ".MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-klop1v"
-      ),
-  };
+    registerLoginBtn: () => cy.get('div').contains('Login'),
+    countryDropdown: () => cy.get('.iti__selected-flag > .iti__flag'),
+    initializeWait: () => cy.wait(1000),
+    telephoneNoInputField: () => cy.get('input[type="tel"]'),
+    continueBtn: () => cy.get('button').contains('Continue'),
+    passwordInput: () => cy.get('input[type="password"]'),
+    errorMessage: () =>
+      cy.get('div').contains('Password Not Correct. Please Try Again'),
+  }
 
-  clickAddCourse() {
-    this.elements.addCourseBtn().click();
+  fillInLoginInformation() {
+    this.elements.registerLoginBtn().click()
+    this.elements.countryDropdown().click()
+    this.elements.initializeWait()
+    this.elements
+      .telephoneNoInputField()
+      .click()
+      .type(Cypress.env('TELEPHONENO'))
+    this.elements.continueBtn().click()
+    this.elements.passwordInput().type(Cypress.env('PASSWORD'))
+    this.elements.continueBtn().click()
+  }
+
+  fillLoginFormWithIncorrectCredentialsInformation() {
+    this.elements.registerLoginBtn().click()
+    this.elements.countryDropdown().click()
+    this.elements.initializeWait()
+    this.elements
+      .telephoneNoInputField()
+      .click()
+      .type(Cypress.env('TELEPHONENO'))
+    this.elements.continueBtn().click()
+    this.elements.passwordInput().type(Cypress.env('INCORRECTPASSWORD'))
+    this.elements.continueBtn().click()
+  }
+
+  loginError() {
+    this.elements.errorMessage().should('be.visible')
   }
 }
 
-export const landingPage = new LandingPage();
+export const landingPage = new LandingPage()

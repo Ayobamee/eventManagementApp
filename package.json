@@ -1,7 +1,7 @@
 {
-  "name": "cypress-cucumber-boilerplate",
+  "name": "liveet",
   "version": "2.2.0",
-  "description": "This project is meant to be a kind of template to start working with Cucumber and Cypress just cloning the project.",
+  "description": "This project is built to automate tests for an event planning app.",
   "main": "index.js",
   "scripts": {
     "openTestRunner": "npx cypress open",

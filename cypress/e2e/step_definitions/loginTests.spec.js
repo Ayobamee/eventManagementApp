@@ -1,31 +1,28 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import { loginPage } from "@pages/LoginPage";
+import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
+import { landingPage } from '@pages/LandingPage'
+import { homePage } from '@pages/HomePage'
 
-Given("A user is at the quales edu library login page", () => {
-  cy.visit("/");
-});
-
-When(
-  "A user enters the username the password and clicks on the login button",
-  () => {
-    loginPage.submitLogin();
-  }
-);
+Given('A user is at the liveet login page', () => {
+  cy.visit('/')
+})
 
 When(
-  "A user provides incorrect credentials, and clicks on the login button",
+  'The user inputs approrpraite credentials during the login process',
   () => {
-    loginPage.submitLoginWithIncorrectCredentials();
+    landingPage.fillInLoginInformation()
   }
-);
-Then("The url will contains the quales library", () => {
-  cy.url().should("contains", "/courses");
-});
+)
 
-Then("The error message {string} is displayed", (errorMessage) => {
-  loginPage.elements.errorMessage().should("have.text", errorMessage);
-});
+When('The user provides incorrect credentials during the login process', () => {
+  landingPage.fillLoginFormWithIncorrectCredentialsInformation()
+})
+Then('The user should be directed to the liveet home page', () => {
+  homePage.checkHomePageItems()
+})
 
-Then("The message {string} is displayed", () => {
-  loginPage.elements.errorMessage().should("be.visible");
-});
+Then(
+  'An error message should be displayed and user should not be directed to the liveet home page',
+  () => {
+    landingPage.loginError()
+  }
+)
