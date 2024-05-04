@@ -17,7 +17,7 @@ class LandingPage {
     this.elements
       .telephoneNoInputField()
       .click()
-      .type(Cypress.env('TELEPHONENO'))
+      .type(Cypress.env('USERNAME'))
     this.elements.continueBtn().click()
     this.elements.passwordInput().type(Cypress.env('PASSWORD'))
     this.elements.continueBtn().click()
@@ -30,7 +30,7 @@ class LandingPage {
     this.elements
       .telephoneNoInputField()
       .click()
-      .type(Cypress.env('TELEPHONENO'))
+      .type(Cypress.env('USERNAME'))
     this.elements.continueBtn().click()
     this.elements.passwordInput().type(Cypress.env('INCORRECTPASSWORD'))
     this.elements.continueBtn().click()
