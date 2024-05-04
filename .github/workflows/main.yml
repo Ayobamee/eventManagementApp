@@ -14,10 +14,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+        npm install @faker-js/faker
 
       - name: Run Cypress Tests
         run: npx cypress run
         env:
-          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+          CYPRESS_USERNAME: ${{ secrets.CYPRESS_TELEPHONENO }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
-          CYPRESS_WRONGUSERNAME: ${{ secrets.CYPRESS_WRONGUSERNAME }}
+          CYPRESS_WRONGUSERNAME: ${{ secrets.CYPRESS_INCORRECTPASSWORD }}
