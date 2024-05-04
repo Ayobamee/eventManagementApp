@@ -16,6 +16,7 @@ class LandingPage {
     this.elements.initializeWait()
     this.elements.telephoneNoInputField().click().type(Cypress.env('USERNAME'))
     this.elements.continueBtn().click()
+    cy.wait(3000)
     this.elements.passwordInput().type(Cypress.env('PASSWORD'))
     this.elements.continueBtn().click()
   }
@@ -26,6 +27,7 @@ class LandingPage {
     this.elements.initializeWait()
     this.elements.telephoneNoInputField().click().type(Cypress.env('USERNAME'))
     this.elements.continueBtn().click()
+    cy.wait(3000)
     this.elements.passwordInput().type(Cypress.env('INCORRECTPASSWORD'))
     this.elements.continueBtn().click()
   }
