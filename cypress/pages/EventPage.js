@@ -37,6 +37,12 @@ class EventPage {
       cy.get('input[placeholder="Ticket description"]'),
     nextButton: () => cy.get('button'),
     eventControlsText: () => cy.get('div').contains('Event Controls'),
+    allowInvitationRadioBtn: () =>
+      cy.get('input[value="CAN_INVITE_RESTRICTED"]'),
+    allowguesttransferTicketRadioBtn: () =>
+      cy.get('input[value="CAN_TRANSFER"]'),
+    nofaceIDRadioBtn: () => cy.get('input[value="NO_FACE_ID"]'),
+    saveBtn: () => cy.get('button').contains('Save'),
   }
 
   checkEventPageItems() {
@@ -75,6 +81,10 @@ class EventPage {
     this.elements.ticketDescriptionInputField().type('10')
     this.elements.nextButton().eq(2).click({ force: true })
     this.elements.eventControlsText().should('be.visible')
+    this.elements.allowInvitationRadioBtn().click()
+    this.elements.allowguesttransferTicketRadioBtn().click()
+    this.elements.nofaceIDRadioBtn().click()
+    this.elements.saveBtn().click()
   }
 }
 
